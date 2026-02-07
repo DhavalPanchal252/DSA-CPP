@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C++ Run Global I/O (No Terminal + Timeout)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "Remove-Item \"${fileDirname}\\temp.exe\" -ErrorAction SilentlyContinue; Out-File -FilePath \"${workspaceFolder}\\output.txt\" -InputObject \"\"; g++ \"${file}\" -std=c++17 -Wall -Wextra -o \"${fileDirname}\\temp.exe\" 2>> \"${workspaceFolder}\\output.txt\"; if ($LASTEXITCODE -ne 0) { exit }; $p = Start-Process \"${fileDirname}\\temp.exe\" -RedirectStandardInput \"${workspaceFolder}\\input.txt\" -RedirectStandardOutput \"${workspaceFolder}\\output.txt\" -NoNewWindow -PassThru; Start-Sleep 2; if (!$p.HasExited) { $p.Kill(); Add-Content \"${workspaceFolder}\\output.txt\" \"Your code is stuck (possible infinite loop).\" }"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "never",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ]
+}
