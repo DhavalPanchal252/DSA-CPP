@@ -41,22 +41,21 @@ Node* optimal(Node* head , int x){
 
     while(temp){
         if(temp->data == x){
+            
             Node* del = temp;
-            Node* nextNode = temp->next;
+            Node* prevNode = del->prev;
+            Node* nextNode = del->next;
 
-            if(del == head){
+            if(temp == head){
                 head = nextNode;
-
                 if(head) head->prev = nullptr;
-                
             }
             else{
-
-                if(del->prev) del->prev->next = nextNode;
-                if(del->next) nextNode->prev = del->prev;
-                 
+                if(prevNode) prevNode->next = nextNode;
+                if(nextNode) nextNode->prev = prevNode;
             }
-            delete del; 
+
+            delete del;
             temp = nextNode;
         }
         else{
