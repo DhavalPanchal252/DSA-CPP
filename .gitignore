@@ -2,4 +2,5 @@ input.txt
 output.txt
 *.log
 *.tmp
+temp.exe
 notes_git.txt
