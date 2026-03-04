@@ -15,7 +15,7 @@ It cleans out the junk from the string — removes everything from the new "vali
 */
 bool isPalindrome(string s){
     for(auto &c : s){ 
-        tolower(c);
+        c = tolower(c);
     }
     s.erase(remove_if(s.begin(),s.end(),[](char c){
             return !isalnum(c);}),s.end());
