@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 /*
 ==================================================
         FIND UNIQUE BINARY STRING
@@ -9,7 +8,6 @@ return a binary string of length n that
 does not exist in the array.
 ==================================================
 */
-
 
 // --------------------------------------------------
 // 1️⃣ Brute Force
@@ -45,8 +43,6 @@ string bruteForce(vector<string>& nums) {
     return "";
 }
 
-
-
 // --------------------------------------------------
 // 2️⃣ Bitmask Method
 // Convert strings → integers
@@ -76,8 +72,6 @@ string bitmaskMethod(vector<string>& nums) {
     }
     return "";
 }
-
-
 
 // --------------------------------------------------
 // 3️⃣ Optimal Solution (Cantor Diagonal Trick)
@@ -111,8 +105,6 @@ string optimal(vector<string>& nums) {
 
     return ans;
 }
-
-
 
 // --------------------------------------------------
 // MAIN FUNCTION
