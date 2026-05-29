@@ -109,6 +109,7 @@ string optimal(vector<string>& nums) {
 // --------------------------------------------------
 // MAIN FUNCTION
 // --------------------------------------------------
+
 int main() {
 
     vector<string> nums = {"01","10"};
