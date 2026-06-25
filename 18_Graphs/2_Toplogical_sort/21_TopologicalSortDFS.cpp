@@ -75,7 +75,7 @@ vector<int> topoSort(int V,
         int u = edge[0];
         int v = edge[1];
 
-        u -> v
+        // u -> v
 
         adj[u].push_back(v);
     }
